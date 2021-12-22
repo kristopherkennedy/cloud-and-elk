@@ -29,35 +29,37 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly Avaolable, in addition to restricting inbound access to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+-  What aspect of security do load balancers protect? What is the advantage of a jump box?_
 a load balancer will assist in monitoring and directing traffic. it can also identify if a server is in need of maintnance or not responding due to being offline
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file system of the VMs on the network and system metric_.
-- _TODO: What does Filebeat watch for?_
-filebeat organizes file system log files and send this information to logstash and elasticsearch to help put into human read-able form
-- _TODO: What does Metricbeat record?_
-similar to filebeat metricbeat collects operating system services and send the information to logstash and elasticsearch to be broken into human read-able form
+-  What does Filebeat watch for?
+
+Filebeat organizes file system log files and send this information to logstash and elasticsearch to help put into human read-able form
+-  What does Metricbeat record?
+
+Similar to filebeat metricbeat collects operating system services and send the information to logstash and elasticsearch to be broken into human read-able form
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| DVWA     |webserver | 10.0.0.5   | Linux            |
-| DVWA     |webserver | 10.0.0.6   | Linux            |
-| ELK      |monitoring| 10.1.0.4   | Linux            |
+| Name     | Function |       IP Address         | Operating System |
+|----------|----------|--------------------------|------------------|
+| Jump Box | Gateway  | 10.0.0.1/104.43.251.20   | Linux            |
+| DVWA     |webserver | 10.0.0.5/40.122.33.239   | Linux            |
+| DVWA     |webserver | 10.0.0.6/40.122.33.239   | Linux            |
+| ELK      |monitoring| 10.1.0.4/157.55.164.105  | Linux            |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the jummpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses?_
+- Add whitelisted IP addresses?_
 Public ip with TCP 5601
 
 Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+- Which machine did you allow to access your ELK VM? What was its IP address?_
 jump box - (private) 10.0.0.4, (public) 104.43.251.20
 local machine - (public) 76.187.11.37 
 A summary of the access policies in place can be found in the table below.
@@ -72,11 +74,11 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- What is the main advantage of automating configuration with Ansible?_
 it allows you to create a cripts that will run muliple tasks at once without having to enter manually which saves time and resorces
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+- In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - the ansible header can specify a different group of machines as well as different remote users
 - the playbook will install docker.io, python3-pip,cocker
 - the container will be startd with ports (5601,9200,5044) 
