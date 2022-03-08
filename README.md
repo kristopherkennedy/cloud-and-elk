@@ -79,7 +79,6 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 it allows you to create a cripts that will run muliple tasks at once without having to enter manually which saves time and resorces
 
 The playbook implements the following tasks:
-- In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - the ansible header can specify a different group of machines as well as different remote users
 - the playbook will install docker.io, python3-pip,cocker
 - the container will be startd with ports (5601,9200,5044) 
